@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <style>
+        :root {
+            --cor1: #57FFCA;
+            --cor2: #52DAF5;
+            --cor3: #478CFF;
+            --cor4: #3E9FDE;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(var(--cor1), var(--cor2)) no-repeat;
+        }
+        h1 {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+        .container {
+            margin: auto;
+            margin-top: 100px;
+            max-width: max-content;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: var(--cor2);
+        }
+        input, button {
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 10px 15px;
+        }
+        button:hover {
+            background-color: var(--cor3);
+        }
+        button:active {
+            background-color: var(--cor4);
+        }
+        input[type="text"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Itens</h1>
+        <div>
+            <input type="text" name="text" id="itext" placeholder="escreva um item">
+            <button id="adc">Adicionar</button>
+        </div>
+        <div>
+            <ul id="lista">
+            </ul>
+            <button id="limpar">Limpar</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('adc').addEventListener('click', function(){
+            var itext = document.getElementById('itext')
+            var lista = document.getElementById('lista')
+            var li = document.createElement('li')
+            if (itext.value == '') {
+                alert('[ERROR] Campo Vazio')
+            } else {
+                
+            li.textContent = itext.value
+            lista.appendChild(li)
+            itext.value = ""
+            itext.focus()
+            document.getElementById('limpar').addEventListener('click', function(){
+                lista.removeChild(li)
+                itext.focus()
+            })
+            }
+        })
+    </script>
+</body>
+</html>
