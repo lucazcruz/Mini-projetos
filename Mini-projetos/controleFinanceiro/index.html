@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Controle Financeiro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="bloco">
+                <span>Entradas: R$</span>
+                <span id="entrada">--</span>
+            </div>
+            <div class="bloco">
+                <span>Saídas: R$</span>
+                <span id="saida">--</span>
+            </div>
+            <div class="bloco">
+                <span>Total: R$</span>
+                <span id="total">--</span>
+            </div>
+        </div>
+        <div class="adc_item">
+            <div>
+                <label for="nome">Descrição</label>
+                <input type="text" name="descricao" id="nome">
+            </div>
+            <div>
+                <label for="valor">Valor</label>
+                <input type="number" name="valor" id="valor" min="0" >
+            </div>
+            <div>
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saida</option>
+                </select>
+            </div>
+            <div>
+                <button id="btn">Incluir</button>
+            </div>
+        </div>
+        <div>
+            <div class="descricao">
+                <span>Descrição</span>
+                <span>Valor</span>
+                <span>Tipo</span>
+            </div>
+            <ul id="itens">
+                
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
